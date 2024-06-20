@@ -1,0 +1,112 @@
+.overview-item {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f5f5f5; /* Lighter background color */
+}
+
+.overview-item + .overview-item {
+    margin-top: 20px;
+}
+.outer-div-style {
+    background-color: #f2f2f2;
+    padding: 5px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.title-style{
+    padding-left: 70px;
+}
+.logo-image {
+    position: absolute; /* Positions the image relative to the nearest positioned ancestor */
+    top: 0; /* Places the image at the top */
+    left: 0; /* Places the image at the left */
+    width: 80px; /* Adjust the width of the image as needed */
+    height: 53px; /* Maintain aspect ratio */
+    padding: 5px; /* Optional: Add some padding around the image */
+    z-index: 1; /* Ensure the image is above other content */
+    border-radius: 7px; /* Adjust the border radius as needed */
+}
+
+.header-style {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px 8px 0 0;
+}
+
+.header-style h2 {
+    margin: 0;
+}
+
+.button-style {
+    width: 80%;
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 10px;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-w100 {
+    width: 100%;
+    background-color: #333;
+    max-width: 400px;
+    color: #fff;
+    border: none;
+    padding: 20px 20px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-w100:hover {
+    background-color: #555;
+}
+
+p {
+    margin: 0;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Make sure it's on top of everything */
+}
+
+.modal {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    z-index: 10000; /* Make sure it's on top of the overlay */
+}
+
+.modal-content {
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: -30px;
+    right: -15px;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+.activity-image {
+    max-width: 700px;
+}
+
+.homepage-image {
+    max-height: 400px;
+}
