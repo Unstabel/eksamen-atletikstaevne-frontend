@@ -52,7 +52,7 @@ const DisciplinRenderer: React.FC = () => {
   return (
     <div>
       <h2>Discipliner</h2>
-      <button onClick={handleOpenCreateModal}>Opret Disciplin</button>
+      <button onClick={handleOpenCreateModal}>Forbind deltager med disciplin</button>
 
       <ul>
         {discipliner.map((disciplin) => (
