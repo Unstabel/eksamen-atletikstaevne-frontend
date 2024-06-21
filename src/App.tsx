@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import "./App.css";
-import BookGokartButton from "./components/GokartReservationButton";
-import BookMinigolfButton from "./components/MinigolfReservationButton";
-import BookPaintballButton from "./components/PaintballReservationButton";
-import BookClimbingButton from "./components/ClimbingReservationButton";
-import {MainComponent} from "./components/AcitivityOverview";
+import DeltagerRenderer from "./components/Deltager/DeltagerRenderer";
+import ResultatRenderer from "./components/Resultat/ResultatRenderer";
+import DisciplinRenderer from "./components/Disciplin/DisciplinRenderer";
+import DeltagerDisciplinerList from "./components/DisciplinDeltagerRenderer";
 
 export default function App() {
     const [selectedView, setSelectedView] = useState("homepage");
@@ -17,9 +16,8 @@ export default function App() {
     return (
         <>
             <div className="outer-div-style">
-                <img className="logo-image" src={require("./images/adventurexp-homepage-image.jpg")}/>
                 <div className="header-style">
-                    <h2 className="title-style">AdventureXP</h2>
+                    <h2 className="title-style">Atletik</h2>
                 </div>
                 <div style={{display: "flex"}}>
                     <div style={{flex: 1, padding: 10}}>
@@ -27,18 +25,14 @@ export default function App() {
                     </div>
                     <div className="button-style">
                         {selectedView === "homepage" ?
-                            <p>Welcome to the Team TL AdventureXP website!
+                            <p>Atletik Stævne
                                 <br/>
-                                <img className="homepage-image" src={require("./images/adventurexp-homepage-image.jpg")} alt=""/>
                                 <br/>
-                                Chose one of the activities from the panel on the left side to start your reservation
                             </p> : null}
-                        {selectedView === "gokart" ? <p>AdventureXP Go-kart <BookGokartButton/></p> : null}
-                        {selectedView === "minigolf" ? <p>AdventureXP Mini-golf <BookMinigolfButton/></p> : null}
-                        {selectedView === "paintball" ? <p>AdventureXP Paintball <BookPaintballButton/></p> : null}
-                        {selectedView === "climbing" ? <p>AdventureXP Climbing <BookClimbingButton/></p> : null}
-                        {selectedView === "overview" ? <p><MainComponent/></p> : null}
-                        {/* make new pages for the buttons here  */}
+                        {selectedView === "deltager" ? <p><DeltagerRenderer/></p> : null}
+                        {selectedView === "resultat" ? <p><ResultatRenderer/></p> : null}
+                        {selectedView === "disciplin" ? <p><DisciplinRenderer/></p> : null}
+                        {selectedView === "dsc" ? <p><DeltagerDisciplinerList/></p> : null}
                     </div>
                 </div>
             </div>
@@ -52,23 +46,17 @@ const Buttons = (props: ButtonProps) => {
     const { onSelected: handleSelected} = props;
     return (
         <>
-            <button className="btn-w100" onClick={() => handleSelected("homepage")}>
-                Homepage
+            <button className="btn-w100" onClick={() => handleSelected("deltager")}>
+                Deltager
             </button>
-            <button className="btn-w100" onClick={() => handleSelected("gokart")}>
-                Go-kart
+            <button className="btn-w100" onClick={() => handleSelected("resultat")}>
+                Resultater
             </button>
-            <button className="btn-w100" onClick={() => handleSelected("minigolf")}>
-                Mini-golf
+            <button className="btn-w100" onClick={() => handleSelected("disciplin")}>
+                Discipliner
             </button>
-            <button className="btn-w100" onClick={() => handleSelected("paintball")}>
-                Paintball
-            </button>
-            <button className="btn-w100" onClick={() => handleSelected("climbing")}>
-                Climbing
-            </button>
-            <button className="btn-w100" onClick={() => handleSelected("overview")}>
-                Overview
+            <button className="btn-w100" onClick={() => handleSelected("dsc")}>
+                Discipliner+Deltagere
             </button>
         </>
     );
